@@ -461,11 +461,11 @@ END;
 GO
 
 
--- AUX
---DELETE FROM director;
+-- Funciones AUXILIARES 
+-- DELETE FROM director;
 -- SELECT * FROM actor
--- CHECK DUPLICATE DATE
-SELECT nombre_apellido , COUNT(*)
-FROM actor
-GROUP BY nombre_apellido
-HAVING COUNT(*) > 1;
+-- CHECK DUPLICATE DATE:
+    -- SELECT nombre_apellido , COUNT(*)
+    -- FROM actor
+    -- GROUP BY nombre_apellido
+    -- HAVING COUNT(*) > 1;
