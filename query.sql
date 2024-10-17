@@ -1,6 +1,5 @@
 USE netflix_bd2;
 
-
 SELECT 
     s.id_show AS show_id,
     ts.descripcion AS type,
