@@ -1,4 +1,4 @@
-USE netflix_bd;
+USE netflix_bd2;
 
 
 SELECT 

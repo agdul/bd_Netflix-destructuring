@@ -1,3 +1,6 @@
+-- CREATE DATABASE --bd--;
+-- USE --bd--;
+
 -- SELECT * FROM dbo.netflix_titles;
 
 CREATE TABLE actor

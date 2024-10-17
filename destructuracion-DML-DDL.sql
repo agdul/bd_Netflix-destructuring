@@ -6,13 +6,14 @@
     -- `STRING_SPLIT(campo, 'caracter que lo separa')`: Se utiliza para dividir cadenas de texto que están separadas por comas.
 
 ------------------------------------------------------------------------------------------------------
-
+-- Creacion de la bd
 CREATE DATABASE netflix_bd2;
 GO
 
 USE netflix_bd2; 
 GO
 
+-- SELECT * FROM dbo.netflix_titles;
 ------------------------------------------------------------------------------------------------------
 -----------------------------------
 ------  INSERT - categoria  -------
@@ -202,14 +203,20 @@ GO
 ------- INSERT - elenco -----------
 -----------------------------------
 
--- Insertar en la tabla elenco sin cursor
+-- Insertar en la tabla elenco sin duplicar claves primarias
 INSERT INTO elenco (id_actor, id_show)
-SELECT a.id_actor, nt.show_id
+SELECT DISTINCT a.id_actor, nt.show_id
 FROM dbo.netflix_titles nt
 CROSS APPLY STRING_SPLIT(nt.cast, ',') AS actors
 JOIN actor a ON LTRIM(RTRIM(actors.value)) = a.nombre_apellido
-WHERE nt.cast IS NOT NULL;
-GO
+WHERE nt.cast IS NOT NULL
+  AND NOT EXISTS (
+      SELECT 1 
+      FROM elenco e
+      WHERE e.id_actor = a.id_actor 
+        AND e.id_show = nt.show_id
+  );
+
 
 -- Verificamos los datos insertados
 SELECT * FROM elenco;
