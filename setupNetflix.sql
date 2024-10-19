@@ -1,7 +1,17 @@
--- CREATE DATABASE --bd--;
--- USE --bd--;
-
--- SELECT * FROM dbo.netflix_titles;
+------------------------------------------------------------------------------------------------------
+-- Comentarios:
+    -- 1.- Primero creamos una base datos 
+            -- CREATE DATABASE name_bd; GO
+    -- 2.- Importar el archivo netflix_titles.csv en la bd creado anteriormente 
+            -- Es imporante tener encuenta la longintud y el tipo de dato que acepta el campo puede derivar en errores en la importacion
+    -- 3.- Una vez importado el archivo correctametne, nos paramos/usamos la bd recien creada
+            -- USE name_bd; GO
+    -- 4.- Si no se modifico el nombre por defecto de la tabla importada, con la siguiente consulta comprobamos que se haya importado  correctametne 
+          -- SELECT * FROM dbo.netflix_titles;
+------------------------------------------------------------------------------------------------------
+-----------------------------------
+----- Creacion de las tablas ------
+-----------------------------------
 
 CREATE TABLE actor
 (
@@ -95,8 +105,9 @@ CREATE TABLE elenco
   CONSTRAINT FK_elenco_id_actor FOREIGN KEY (id_actor) REFERENCES actor(id_actor),
   CONSTRAINT FK_elenco_id_show FOREIGN KEY (id_show) REFERENCES Show(id_show)
 );
+------------------------------------------------------------------------------------------------------
 
-
+-- El siguiente script a ejecutar es el destructuracionNetflix.sql
 
 
 

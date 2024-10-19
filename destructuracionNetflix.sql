@@ -1,17 +1,16 @@
--- Comentarios : 
+------------------------------------------------------------------------------------------------------
+-- Comentarios : Antes de ejecutar este scrip es necesario ejecutar antes setupNetflix.sql
 -- Teoria : 
     -- `TRIM()`: Elimina los espacios en blanco.
     -- `STRING_SPLIT(campo, 'caracter que lo separa')`: Se utiliza para dividir cadenas de texto que están separadas por comas.
-
+    -- `LTRIM(RTRIM(value))`: para eliminar los espacios en blanco al principio y al final del valor obtenido del STRING_SPLIT
 ------------------------------------------------------------------------------------------------------
--- Creacion de la bd
-CREATE DATABASE netflix_bd2;
-GO
 
-USE netflix_bd2; 
-GO
-
--- SELECT * FROM dbo.netflix_titles;
+-- USE name_bd; 
+-- GO
+-----------------------------------
+-------- Normalización ------------
+-----------------------------------
 ------------------------------------------------------------------------------------------------------
 -----------------------------------
 ------  INSERT - categoria  -------
@@ -221,6 +220,11 @@ SELECT * FROM elenco;
 GO
 
 ------------------------------------------------------------------------------------------------------
+
+-- El proximo script a ejecutar es validacionesNetflix.sql
+
+------------------------------------------------------------------------------------------------------
+
 -----------------------------------
 --------   Query - Aux  -----------
 -----------------------------------
