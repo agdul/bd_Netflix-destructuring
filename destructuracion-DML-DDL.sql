@@ -1,6 +1,4 @@
 -- Comentarios : 
-    -- `Tratamientos de null sobre las tablas intermediarias`: 
-        -- Para que los datos tengan consintencia, a pesesar de como estan dados entregados en la table madre, decidi ignorar todos aquellos registros que contengan NULL, en aquellos campos que sean PK necesarias al momento de la desestructuracion y la normalizacion
 -- Teoria : 
     -- `TRIM()`: Elimina los espacios en blanco.
     -- `STRING_SPLIT(campo, 'caracter que lo separa')`: Se utiliza para dividir cadenas de texto que están separadas por comas.

@@ -2,7 +2,15 @@
     -- `Tratamientos de null sobre las tablas intermediarias`: 
         -- Para que los datos tengan consintencia, a pesesar de como estan dados entregados en la table madre, decidi ignorar todos aquellos registros que contengan NULL, en aquellos campos que sean PK necesarias al momento de la desestructuracion y la normalizacion
 
-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+-- Creacion de la bd
+CREATE DATABASE netflix_bd2;
+GO
+
+USE netflix_bd2; 
+GO
+
 
 -----------------------------------
 ------  INSERT - categoria  -------
